@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mp3Downloader.MainPage">
+
+    <Grid Grid.Row="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Search bar -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Entry
+                Grid.Column="0"
+                x:Name="InputBox"
+                Completed="SearchButton_Clicked"
+                Margin="15,10"
+                />
+
+            <Button
+                Grid.Column="1"
+                Text="Search"
+                Clicked="SearchButton_Clicked"
+                Margin="10"
+                />
+        </Grid>
+
+        <!-- Downloads panel -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout x:Name="DownloadsPanel">
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
